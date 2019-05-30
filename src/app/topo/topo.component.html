@@ -1,0 +1,46 @@
+<div class="fixed-top" style="background-color:#FFFFFF;">
+  <nav class="navbar navbar-light bg-faded">
+    <div class="container">
+      <a routerLink="" class="navbar-brand">
+        <img src="/assets/logo.png" />
+      </a>
+
+      <a><img src="/assets/carrinho.png" routerLink="/ordem-compra" /></a>
+    </div>
+  </nav>
+
+  <div class="menu">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLinkActive="active" routerLink="/restaurantes" href="#">Restaurantes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/diversao">Diversão</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="banner">
+  <img src="/assets/banners/img_4.jpg" />
+</div>
+<div class="search">
+  <div class="container">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-12">
+        <input type="text" #ofertaPesquisa (keyup)="termoPesquisa(ofertaPesquisa.value)" class="form-control"
+          placeholder="Busca rápida por ofertas aqui...">
+        <ul class="list-group">
+
+          <li class="list-group-item" *ngFor="let ofertas of ofertas2">
+            <a [routerLink]="['/oferta', ofertas.id,'como-usar']" (click)="limparPesquisa()" *ngIf="ofertas2 !== null">
+              {{ofertas.descricao_oferta}}
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
